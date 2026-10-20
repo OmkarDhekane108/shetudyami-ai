@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "630304225790",
+    "project_id": "shetudyami-ai",
+    "storage_bucket": "shetudyami-ai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630304225790:android:2ff5badfd178c8145b28af",
+        "android_client_info": {
+          "package_name": "com.shetudyami.shetudyami_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA806yeAQQoGegQnNKTbDhBN2cWvksnfcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
