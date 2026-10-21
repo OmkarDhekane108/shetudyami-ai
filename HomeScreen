@@ -1,0 +1,51 @@
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  Widget _btn(BuildContext context, String emoji, String label, Widget page) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: SizedBox(
+        width: double.infinity,
+        height: 64,
+        child: FilledButton.icon(
+          icon: Text(emoji, style: const TextStyle(fontSize: 26)),
+          label: Text(label, style: const TextStyle(fontSize: 20)),
+          onPressed: () => Navigator.push(
+              context, MaterialPageRoute(builder: (_) => page)),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ShetUdyami.AI'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () => FirebaseAuth.instance.signOut(),
+          ),
+        ],
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(24),
+        children: [
+          Text(
+            'स्वागत! 🌾\n${user?.phoneNumber ?? ''}',
+            style: const TextStyle(fontSize: 24),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 32),
+          _btn(context, '🥛', 'दूध नोंद', const MilkScreen()),
+          _btn(context, '📊', 'महिना हिशोब', const ReportScreen()),
+          _btn(context, '🐄', 'जनावरे व लसीकरण', const AnimalsScreen()),
+        ],
+      ),
+    );
+  }
+}cd C:\Projects\shetudyami-ai\mobile
+dir lib
+flutter run -d chrome
